@@ -1,0 +1,149 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&display=swap");
+
+:root {
+  --color-body: #a47551; /* Wood-like brown */
+  --color-heading: #f4e9d8; /* Light beige, like sand or stone */
+  --color-base: #5a3d2b; /* Darker brown, resembling bark or soil */
+  --color-base2: #3e2a1d; /* Even darker brown, like deep wood or rich soil */
+  --color-brand: #c3a37b; /* Warm tan, earthy and neutral */
+  --color-brand2: #8b6a44; /* Muted brown, akin to clay or dry earth */
+  --color-hover: #fff700;
+  --sidbar-width: 240px;
+  --font-base: "Bai Jamjuree";
+}
+
+body {
+  background-color: var(--color-base2);
+  color: var(--color-body);
+  font-family: var(--font-base), sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-brand);
+  font-weight: 700;
+  z-index: 2;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-body);
+  transition: all 0.4s ease;
+}
+
+a:hover {
+  color: var(--color-hover);
+}
+
+img {
+  width: 100%;
+}
+
+/* General navbar styling */
+.navbar {
+  background-color: var(--color-base);
+  width: 100%;
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgb(62, 42, 29)),
+    url(../images/07.jpeg);
+
+  background-size: cover;
+  background-position: fixed;
+  /* background-position: center top; */
+}
+
+/* Navbar height for all pages except the homepage */
+.navbar:not(.navbar-home) {
+  height: 35vh; /* Smaller height for other pages */
+}
+
+/* Navbar height for the homepage */
+.navbar-home {
+  height: 75vh; /* Larger height for the homepage */
+}
+
+.navbar .nav-item .nav-link {
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #fff;
+  transition: color 0.4s ease;
+}
+
+.navbar .nav-item .nav-link:hover {
+  color: var(--color-hover) !important;
+}
+
+.navbar .nav-item .nav-link.active {
+  color: var(--color-heading);
+}
+
+.navbar-collapse {
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar-nav {
+  flex-direction: row;
+}
+
+.navbar-nav .nav-link {
+  margin: 0 15px;
+}
+
+.navbar-brand img {
+  border: 6px solid var(--color-brand);
+}
+
+/* CONTENT WRAPPER */
+#content-wrapper {
+  margin-top: 75vh; /* Adjust the content wrapper so it doesn't overlap with the navbar */
+}
+
+/* Full-screen width image container */
+.image-container {
+  position: relative;
+  width: 100vw; /* Full viewport width */
+  height: 60vh;
+  overflow: hidden;
+}
+
+/* Full-screen image styling */
+.image-container img {
+  width: 100vw;
+  height: 100%;
+  object-fit: cover; /* Ensures the image covers the container while maintaining aspect ratio */
+  display: block;
+  filter: brightness(50%);
+  transition: filter 0.4s ease;
+}
+
+/* Text overlay in the center of the image */
+.overlay-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+  z-index: 2;
+}
+
+.overlay-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* Hover effect to make the image darker when hovered */
+.image-container:hover img {
+  filter: brightness(40%); /* Darker hover effect */
+}
